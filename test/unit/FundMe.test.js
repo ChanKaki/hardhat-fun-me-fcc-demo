@@ -123,17 +123,12 @@ describe("FundMe", async function () {
                     0
                 )
             }
-        })
+        }) 
 
         it("only allows the owner to withdraw", async function () {
-            const accounts = ethers.getSigners()
+            const accounts = await ethers.getSigners()
             // 随机一个作为attacker
-
             const attackerConnectedContract = await fundMe.connect(accounts[1])
-
-            console.log(attackerConnectedContract)
-            await attackerConnectedContract.withdraw()
-
             await expect(
                 attackerConnectedContract.withdraw()
             ).to.be.revertedWith("Fundme_NotOwner")
