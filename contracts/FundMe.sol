@@ -45,7 +45,7 @@ contract FundMe {
         }
         s_funders = new address[](0);
         // // transfer
-        // payable(msg.sender).transfer(address(this).balance);
+        // payable(msg.sender).transfer(address(t his).balance);
         // // send
         // bool sendSuccess = payable(msg.sender).send(address(this).balance);
         // require(sendSuccess, "Send failed");
